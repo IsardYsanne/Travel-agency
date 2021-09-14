@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>Soft Tours</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+	integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+	crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__wrapper">
+                <div class="header__container _container">
+                    <div class="header__body">
+                        <!-- основное меню -->
+                        <div class="header__main">
+                            <a href="" class="header__logo">
+                                <img src="./img/logo.png" alt="">
+                            </a>
+                            <div class="header__menu menu">
+                                <nav class="menu__body">
+                                    <ul data-spollers="768,max" class="menu__list">
+                                        <li class="menu__item">
+                                            <a href="" class="menu__link">Туры</a>
+                                            <!-- у каждого меню есть подменю: кнопка для него (spoller)-->
+                                            <button data-spoller type="button" class="menu__arrow _icon-arrow-down"></button>
+                                            <!-- выпадающий список -->
+                                            <ul class="menu__sub-list">
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">Турция</a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">Крым</a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">Кипр</a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">Абхазия</a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">Египет</a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">Сейшелы</a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">Мальдивы</a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">и другие..</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="" class="menu__link">Визы</a>
+                                            <!-- у каждого меню есть подменю: кнопка для него-->
+                                            <button data-spoller type="button" class="menu__arrow _icon-arrow-down"></button>
+                                            <!-- выпадающий список -->
+                                            <ul class="menu__sub-list">
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">Шенген</a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">Провиза</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="" class="menu__link">Цены</a>
+                                            <!-- у каждого меню есть подменю: кнопка для него-->
+                                            <button data-spoller type="button" class="menu__arrow _icon-arrow-down"></button>
+                                            <!-- выпадающий список -->
+                                            <ul class="menu__sub-list">
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">от 20000 руб</a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">от 50000 руб</a>
+                                                </li>
+                                                <li class="menu__sub-item">
+                                                    <a href="" class="menu__sub-link">от 100000 руб</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- поиск -->
+                        <div class="header__search">
+                            <div class="search-form">
+                                <button type="button" class="search-form__icon _icon-search"></button>
+                                <form action="#" class="search-form__item">
+                                    <!-- кнопка поиск -->
+                                    <button type="submit" class="search-form__btn _icon-search"></button>
+                                    <!-- поле ввода -->
+                                    <input autocomplete="off" type="text" name="form[]" data-value="Поиск по сайту" class="search-form__input">
+                                </form>
+                            </div>
+                        </div>
+                        <!-- действия пользователя -->
+                        <div class="header__actions actions-header">
+                            <!-- избранное -->
+                            <a href="" class="actions-header__item actions-header__item_favorites _icon-favorite"></a>
+                            <!-- корзина -->
+                            <div class="actions-header__item cart-header">
+                                <!-- количество товаров -->
+                                <a href="" class="cart-header__icon _icon-cart">
+                                    <span>0</span>
+                                </a>
+                                <!-- выпадающий список -->
+                                <div class="cart-header__body">
+                                    <!-- сюда будут выводиться выбранные товары при помощи JS -->
+                                    <ul class="cart-header__list cart-list"></ul>
+                                </div>
+                            </div>
+                            <!-- иконка пользователя -->
+                            <a href="" class="actions-header__item actions-header__item_user _ibg">
+                                <img src="./img/foto.jpg" alt="Avatar">
+                            </a>
+                        </div>
+                        <!-- кнопка бургера -->
+                        <button type="button" class="menu__icon icon-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="page">
+            <!-- делаем слайдер -->
+            <section class="page__main-slider main-slider">
+                <div class="main-slider__container _container">
+                    <div class="main-slider__body">
+                        <!-- блок с текстом поверх слайдера-->
+                        <div class="main-slider__content content-main">
+                            <h1 class="content-main__title">Luxury tours in Moscow</h1>
+								<div class="content-main__text">
+									Разнообразие вариантов отдыха, контроль качества работы и специальные концепции для туристов разных возрастов и категорий – то, за что нас выбирают
+								</div>
+                                <!-- на разрешении 992 пикс переместили кнопку вниз -->
+								<a href="" data-da=".main-slider__body,991.98" class="content-main__button btn">Купить сейчас</a>
+                        </div>
+                        <!-- сам слайдер -->
+                        <div class="main-slider__slider slider-main">
+                            <!-- блок с элементами управления слайдером -->
+                            <div class="slider-main__controls controls-slider-main">
+                                <!-- точки -->
+                                <div class="controls-slider-main__dotts"></div>
+                                <!-- стрелки -->
+                                <div class="controls-slider-main__arrows slider-arrows">
+                                    <button type="button" class="slider-arrow slider-arrow_prev _icon-arrow-down"></button>
+                                    <button type="button" class="slider-arrow slider-arrow_next _icon-arrow-down"></button>
+                                </div>
+                            </div>
+                            <!-- свайпер -->
+                            <div class="slider-main__body _swiper">
+                                <div class="slider-main__slide">
+                                    <div class="slider-main__image _ibg">
+                                        <img src="img/1.jpg" alt="Image">
+                                    </div>
+                                    <!-- добавим параллакс, чтобы уходящий блок скрывался-->
+                                    <a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
+                                        <div class="slider-main__title">Кипр</div>
+                                        <div class="slider-main__text">Grecian Park 5*</div>
+                                        <div class="slider-main__price _icon-arrow-link">200 000 руб. 2 взр.</div>
+                                    </a>
+                                </div>
+                                <div class="slider-main__slide">
+                                    <div class="slider-main__image _ibg">
+                                        <img src="img/4.jpg" alt="Image">
+                                    </div>
+                                    <!-- добавим параллакс, чтобы уходящий блок скрывался-->
+                                    <a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
+                                        <div class="slider-main__title">Карелия</div>
+                                        <div class="slider-main__text">Гостиница Пихтовая роща</div>
+                                        <div class="slider-main__price _icon-arrow-link">70 000 руб. 2 взр.</div>
+                                    </a>
+                                </div>
+                                <div class="slider-main__slide">
+                                    <div class="slider-main__image _ibg">
+                                        <img src="img/2.png" alt="Картинка слайда">
+                                    </div>
+                                    <a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
+                                        <div class="slider-main__title">Греция</div>
+                                        <div class="slider-main__text">Luxury hotel Afrodita 5*</div>
+                                        <div class="slider-main__price _icon-arrow-link">230 000 руб. 2 взр.</div>
+                                    </a>
+                                </div>
+                                <div class="slider-main__slide">
+                                    <div class="slider-main__image _ibg">
+                                        <img src="img/3.png" alt="Картинка слайда">
+                                    </div>
+                                    <a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
+                                        <div class="slider-main__title">Турция</div>
+                                        <div class="slider-main__text">Marmaris Hotel Resort & SPA 5*</div>
+                                        <div class="slider-main__price _icon-arrow-link">170 000 руб. 2 взр.</div>
+                                    </a>
+                                </div>
+                                <div class="slider-main__slide">
+                                    <div class="slider-main__image _ibg">
+                                        <img src="img/trips/seyshells.jpg" alt="Картинка слайда">
+                                    </div>
+                                    <a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
+                                        <div class="slider-main__title">Сейшельские острова</div>
+                                        <div class="slider-main__text">Lousiana hotel & SPA 5*</div>
+                                        <div class="slider-main__price _icon-arrow-link">470 000 руб. 2 взр.</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- иконки -->
+            <section class="page__advantages advantages">
+                <div class="advantages__container _container">
+                    <div class="advantages__item">
+                        <div class="advantages__icon">
+                            <img src="img/advantages/24hours.svg" width="65" height="65" alt="24 / 7 Support">
+                        </div>
+                        <h3 class="advantages__title">Работаем 24/7</h3>
+                        <div class="advantages__text">Наш менеджер свяжется с Вами в любое время</div>
+                    </div>
+                    <div class="advantages__item">
+                        <div class="advantages__icon">
+                            <img src="img/advantages/visa2.svg" width="65" height="65" alt="Visas">
+                        </div>
+                        <h3 class="advantages__title">Визы 30-ти стран мира</h3>
+                        <div class="advantages__text">Делаем визы в сроки от 2-х дней до 2-х недель</div>
+                    </div>
+                    <div class="advantages__item">
+                        <div class="advantages__icon">
+                            <img src="img/advantages/palm.svg" width="65" height="65" alt="Tours">
+                        </div>
+                        <h3 class="advantages__title">Свыше 50-ти стран для отдыха</h3>
+                        <div class="advantages__text">Пляжный, горный, зимний виды путешествий</div>
+                    </div>
+                    <div class="advantages__item">
+                        <div class="advantages__icon">
+                            <img src="img/advantages/save.svg" width="65" height="65" alt="Insurance">
+                        </div>
+                        <h3 class="advantages__title">Страховка</h3>
+                        <div class="advantages__text">В случае непредвиденных обстоятельств возвращаем полную стоимость путёвки</div>
+                    </div>
+                </div>
+            </section>
+            <!-- наши товары -->
+            <section class="page__products products">
+                <div class="products__container _container">
+                    <h2 class="products__title _title">Путешествия</h2>
+                    <div class="products__items">
+                        <!-- для добавления в корзину дадим позиции товара атрибут  data-pid="" -->
+                        <article data-pid="1" class="products__item item-product">
+                            <div class="item-product__labels">
+                                <div class="item-product__label item-product__label_sale">-20%</div>
+                                <div class="item-product__label item-product__label_new">New</div>
+                            </div>
+                            <a href="" class="item-product__image _ibg">
+                                <img src="img/trips/carel.jpg" alt="Карелия">
+                            </a>
+                            <div class="item-product__body">
+                                <div class="item-product__content">
+                                    <h3 class="item-product__title">Карелия</h3>
+                                    <div class="item-product__text">2 взр / 10 дн.</div>
+                                </div>
+                                <div class="item-product__prices">
+                                    <div class="item-product__price">руб. 70 000.00</div>
+                                    <div class="item-product__price item-product__price_old">руб. 90 000.00</div>
+                                </div>
+                                <!-- блок поверх карточки -->
+                                <div class="item-product__actions actions-product">
+                                    <div class="actions-product__body">
+                                        <a href="" class="actions-product__button btn btn_white">Добавить тур в корзину</a>
+                                        <a href="" class="actions-product__link _icon-share">Share</a>
+                                        <a href="" class="actions-product__link _icon-favorite">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article data-pid="2" class="products__item item-product">
+                            <div class="item-product__labels">
+                                <div class="item-product__label item-product__label_new">New</div>
+                            </div>
+                            <a href="" class="item-product__image _ibg">
+                                <img src="img/trips/seyshells.jpg" alt="Сейшелы">
+                            </a>
+                            <div class="item-product__body">
+                                <div class="item-product__content">
+                                    <h3 class="item-product__title">Сейшельские Острова</h3>
+                                    <div class="item-product__text">2 нед. / 2 взр.</div>
+                                </div>
+                                <div class="item-product__prices">
+                                    <div class="item-product__price">руб 350 000.00</div>
+                                </div>
+                                <div class="item-product__actions actions-product">
+                                    <div class="actions-product__body">
+                                        <a href="" class="actions-product__button btn btn_white">Добавить тур в корзину</a>
+                                        <a href="" class="actions-product__link _icon-share">Share</a>
+                                        <a href="" class="actions-product__link _icon-favorite">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article data-pid="3" class="products__item item-product">
+                            <div class="item-product__labels">
+                                <div class="item-product__label item-product__label_sale">-50%</div>
+                            </div>
+                            <a href="" class="item-product__image _ibg">
+                                <img src="img/trips/cr.jpg" alt="Крым">
+                            </a>
+                            <div class="item-product__body">
+                                <div class="item-product__content">
+                                    <h3 class="item-product__title">Крым</h3>
+                                    <div class="item-product__text">2 нед. / 2 взр.</div>
+                                </div>
+                                <div class="item-product__prices">
+                                    <div class="item-product__price">руб 30 000.00</div>
+                                    <div class="item-product__price item-product__price_old">руб 60 000.00</div>
+                                </div>
+                                <div class="item-product__actions actions-product">
+                                    <div class="actions-product__body">
+                                        <a href="" class="actions-product__button btn btn_white">Добавить тур в корзину</a>
+                                        <a href="" class="actions-product__link _icon-share">Share</a>
+                                        <a href="" class="actions-product__link _icon-favorite">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article data-pid="4" class="products__item item-product">
+                            <div class="item-product__labels"></div>
+                            <a href="" class="item-product__image _ibg">
+                                <img src="img/trips/mal.jpg" alt="Мальдивы">
+                            </a>
+                            <div class="item-product__body">
+                                <div class="item-product__content">
+                                    <h3 class="item-product__title">Мальдивы</h3>
+                                    <div class="item-product__text">2 нед. / 2 взр.</div>
+                                </div>
+                                <div class="item-product__prices">
+                                    <div class="item-product__price">руб. 300 000.00</div>
+                                </div>
+                                <div class="item-product__actions actions-product">
+                                    <div class="actions-product__body">
+                                        <a href="" class="actions-product__button btn btn_white">Добавить тур в корзину</a>
+                                        <a href="" class="actions-product__link _icon-share">Share</a>
+                                        <a href="" class="actions-product__link _icon-favorite">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article data-pid="5" class="products__item item-product">
+                            <div class="item-product__labels"></div>
+                            <a href="" class="item-product__image _ibg">
+                                <img src="img/trips/cuba2.jpg" alt="Куба">
+                            </a>
+                            <div class="item-product__body">
+                                <div class="item-product__content">
+                                    <h3 class="item-product__title">Куба</h3>
+                                    <div class="item-product__text">2 нед. / 2 взр.</div>
+                                </div>
+                                <div class="item-product__prices">
+                                    <div class="item-product__price">руб. 200 000.00</div>
+                                </div>
+                                <div class="item-product__actions actions-product">
+                                    <div class="actions-product__body">
+                                        <a href="" class="actions-product__button btn btn_white">Добавить тур в корзину</a>
+                                        <a href="" class="actions-product__link _icon-share">Share</a>
+                                        <a href="" class="actions-product__link _icon-favorite">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article data-pid="6" class="products__item item-product">
+                            <div class="item-product__labels"></div>
+                            <a href="" class="item-product__image _ibg">
+                                <img src="img/trips/tai.jpg" alt="Тайланд">
+                            </a>
+                            <div class="item-product__body">
+                                <div class="item-product__content">
+                                    <h3 class="item-product__title">Тайланд</h3>
+                                    <div class="item-product__text">2 нед. / 2 взр.</div>
+                                </div>
+                                <div class="item-product__prices">
+                                    <div class="item-product__price">руб. 170 000.00</div>
+                                </div>
+                                <div class="item-product__actions actions-product">
+                                    <div class="actions-product__body">
+                                        <a href="" class="actions-product__button btn btn_white">Добавить тур в корзину</a>
+                                        <a href="" class="actions-product__link _icon-share">Share</a>
+                                        <a href="" class="actions-product__link _icon-favorite">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article data-pid="7" class="products__item item-product">
+                            <div class="item-product__labels"></div>
+                            <a href="" class="item-product__image _ibg">
+                                <img src="img/trips/tur.jpg" alt="Турция">
+                            </a>
+                            <div class="item-product__body">
+                                <div class="item-product__content">
+                                    <h3 class="item-product__title">Турция</h3>
+                                    <div class="item-product__text">2 нед. / 2 взр.</div>
+                                </div>
+                                <div class="item-product__prices">
+                                    <div class="item-product__price">руб. 100 000.00</div>
+                                </div>
+                                <div class="item-product__actions actions-product">
+                                    <div class="actions-product__body">
+                                        <a href="" class="actions-product__button btn btn_white">Добавить тур в корзину</a>
+                                        <a href="" class="actions-product__link _icon-share">Share</a>
+                                        <a href="" class="actions-product__link _icon-favorite">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article data-pid="8" class="products__item item-product">
+                            <div class="item-product__labels"></div>
+                            <div class="item-product__labels">
+                                <div class="item-product__label item-product__label_sale">-15%</div>
+                            </div>
+                            <a href="" class="item-product__image _ibg">
+                                <img src="img/trips/cyprus.jpg" alt="Кипр">
+                            </a>
+                            <div class="item-product__body">
+                                <div class="item-product__content">
+                                    <h3 class="item-product__title">Кипр</h3>
+                                    <div class="item-product__text">2 нед. / 2 взр.</div>
+                                </div>
+                                <div class="item-product__prices">
+                                    <div class="item-product__price">руб. 170 000.00</div>
+                                </div>
+                                <div class="item-product__actions actions-product">
+                                    <div class="actions-product__body">
+                                        <a href="" class="actions-product__button btn btn_white">Добавить тур в корзину</a>
+                                        <a href="" class="actions-product__link _icon-share">Share</a>
+                                        <a href="" class="actions-product__link _icon-favorite">Like</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="products__footer">
+                        <a href="" class="products__more btn btn_white">Посмотреть еще</a>
+                    </div>
+                </div>
+            </section>
+            <!-- неосновной слайдер с отелями -->
+            <section class="page__hotels hotels">
+                <div class="hotels__container _container">
+                    <div class="hotels__body">
+                        <h2 class="hotels__title _title">The most Beautiful Hotels</h2>
+                        <div class="hotels__text">Лучшие отели в самых красивых уголках планеты готовы принять Вас в любое время года!</div>
+                        <a href="" class="hotels__button btn">Узнать больше</a>
+                    </div>
+                    <div class="hotels__slider slider-hotels">
+                        <!-- сам слайдер -->
+                        <div class="slider-hotels__body _swiper">
+                            <div class="slider-hotels__slide">
+                                <div class="slider-hotels__image _ibg">
+                                    <img src="img/hotels/1.jpg" alt="hotel">
+                                </div>
+                                <!-- баннер-ссылка поверх слайдера с контентом -->
+                                <!-- стрелку добавим с пом класса _icon-arrow-link -->
+                                <a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-y="-100%" class="slider-hotels__content _icon-arrow-link">
+                                    <!-- баннер будет пропадать при прокрутке при помощи параллакс эффекта -->
+                                    <div class="slider-hotels__label label-slider">
+                                        <div class="label-slider__number">5*</div>
+                                        <div class="label-slider__line"></div>
+                                        <div class="label-slider__text">Турция, Сиде</div>
+                                    </div>
+                                    <div class="slider-hotels__title">Barut Hemera</div>
+                                </a>
+                            </div>
+                            <div class="slider-hotels__slide">
+                                <div class="slider-hotels__image _ibg">
+                                    <img src="img/hotels/2.jpg" alt="hotel">
+                                </div>
+                                <!-- баннер-ссылка поверх слайдера с контентом -->
+                                <a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-y="-100%" class="slider-hotels__content _icon-arrow-link">
+                                    <div class="slider-hotels__label label-slider">
+                                        <div class="label-slider__number">5*</div>
+                                        <div class="label-slider__line"></div>
+                                        <div class="label-slider__text">остров Маврикий</div>
+                                    </div>
+                                    <div class="slider-hotels__title">LUX Belle Mare Resort & Villas</div>
+                                </a>
+                            </div>
+                            <div class="slider-hotels__slide">
+                                <div class="slider-hotels__image _ibg">
+                                    <img src="img/hotels/3.jpg" alt="hotel">
+                                </div>
+                                <!-- баннер-ссылка поверх слайдера с контентом -->
+                                <a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-y="-100%" class="slider-hotels__content _icon-arrow-link">
+                                    <div class="slider-hotels__label label-slider">
+                                        <div class="label-slider__number">3*</div>
+                                        <div class="label-slider__line"></div>
+                                        <div class="label-slider__text">Крым, Ливадия</div>
+                                    </div>
+                                    <div class="slider-hotels__title">Санаторий Ливадия</div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- элементы управления -->
+                        <div class="slider-hotels__arrows slider-arrows">
+                            <button type="button" class="slider-arrow  slider-arrow_prev _icon-arrow-down"></button>
+                            <button type="button" class="slider-arrow  slider-arrow_next _icon-arrow-down"></button>
+                        </div>
+                        <div class="slider-hotels__dotts"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- нижний слайдер с информацией -->
+            <section class="page__info info">
+                <div class="info__container _container">
+                    <h2 class="info__title _title">Информация по перелету, Covid-19</h2>
+                    <div class="info__slider slider-info">
+                        <div class="slider-info__body _swiper">
+                            <div class="slider-info__slide">
+                                <a href="" class="slider-info__image _ibg">
+                                    <img src="img/info/restrictions.jpg" alt="restrictions">
+                                </a>
+                                <div class="slider-info__content">
+                                    <a href="" class="slider-info__title">Какие ограничения ввели для туристов</a>
+                                    <div class="slider-info__text">07 июня 2021</div>
+                                </div>
+                            </div>
+                            <div class="slider-info__slide">
+                                <a href="" class="slider-info__image _ibg">
+                                    <img src="img/info/vi.jpg" alt="virus">
+                                </a>
+                                <div class="slider-info__content">
+                                    <a href="" class="slider-info__title">В какие страны нужен тест ПЦР, а в какие сертификат</a>
+                                    <div class="slider-info__text">10 июля 2021</div>
+                                </div>
+                            </div>
+                            <div class="slider-info__slide">
+                                <a href="" class="slider-info__image _ibg">
+                                    <img src="img/info/2.jpg" alt="visa">
+                                </a>
+                                <div class="slider-info__content">
+                                    <a href="" class="slider-info__title">В какие страны нужна виза?</a>
+                                    <div class="slider-info__text">01 января 2020</div>
+                                </div>
+                            </div>
+                            <div class="slider-info__slide">
+                                <a href="" class="slider-info__image _ibg">
+                                    <img src="img/info/1.jpg" alt="fly">
+                                </a>
+                                <div class="slider-info__content">
+                                    <a href="" class="slider-info__title">С какими странами было возобновлено международное сообщение</a>
+                                    <div class="slider-info__text">15 июля 2021</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-info__dotts"></div>
+                        <div class="slider-info__arrows slider-arrows">
+                            <button type="button" class="slider-arrow slider-arrow_white slider-arrow_prev _icon-arrow-down"></button>
+                            <button type="button" class="slider-arrow slider-arrow_white slider-arrow_next _icon-arrow-down"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- галерея -->
+            <section class="page__countries countries">
+                <div class="countries__container">
+                    <div class="countries__label">Галерея</div>
+                    <h2 class="countries__title _title">Доступные поездки</h2>
+                    <div data-speed="0.01" class="countries__body">
+                        <div class="countries__items _gallery">
+                            <div class="countries__column">
+                                <div class="countries__row row-countries row-countries_left-top">
+                                    <a href="img/gallery/4.jpg" class="row-countries__item"><img src="img/gallery/4.jpg" alt="Image" height="200" width="150"></a>
+                                    <a href="img/gallery/8.jpg" class="row-countries__item"><img src="img/gallery/8.jpg" alt="Image" height="170" width="300"></a>
+                                    <a href="img/gallery/2.jpg" class="row-countries__item"><img src="img/gallery/2.jpg" alt="Image" height="200" width="300"></a>
+                                </div>
+                                <div class="countries__row row-countries row-countries_left-bottom">
+                                    <a href="img/gallery/3.jpg" class="row-countries__item"><img src="img/gallery/3.jpg" alt="Image" height="300" width="450"></a>
+                                    <a href="img/gallery/5.jpg" class="row-countries__item"><img src="img/gallery/5.jpg" alt="Image" height="150" width="290"></a>
+                                    <a href="img/gallery/6.jpg" class="row-countries__item"><img src="img/gallery/6.jpg" alt="Image" height="150" width="300"></a>
+                                </div>
+                            </div>
+                            <div class="countries__column">
+                                <div class="countries__row row-countries row-countries_center">
+                                    <a href="img/gallery/11.jpg" class="row-countries__item"><img src="img/gallery/11.jpg" alt="Image" height="300" width="200"></a>
+                                </div>
+                            </div>
+                            <div class="countries__column">
+                                <div class="countries__row row-countries row-countries_right-top">
+                                    <a href="img/gallery/7.jpg" class="row-countries__item"><img src="img/gallery/7.jpg" alt="Image" height="150" width="250"></a>
+                                    <a href="img/gallery/9.jpg" class="row-countries__item"><img src="img/gallery/9.jpg" alt="Image" height="150" width="250"></a>
+                                    <a href="img/gallery/10.jpg" class="row-countries__item"><img src="img/gallery/10.jpg" alt="Image" height="150" width="300"></a>
+                                </div>
+                                <div class="countries__row row-countries row-countries_right-bottom">
+                                    <a href="img/gallery/3.jpg" class="row-countries__item"><img src="img/gallery/3.jpg" alt="Image" height="300" width="450"></a>
+                                    <a href="img/gallery/5.jpg" class="row-countries__item"><img src="img/gallery/5.jpg" alt="Image" height="250" width="290"></a>
+                                    <a href="img/gallery/7.jpg" class="row-countries__item"><img src="img/gallery/7.jpg" alt="Image" height="250" width="490"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__container _container">
+                <div class="footer__body">
+                    <div class="footer__main">
+                        <a href="" class="footer__logo">
+                            <img src="./img/logo.png" alt="">
+                        </a>
+                        <div class="footer__text">Туры на любой вкус и кошелёк. Добросовестное отношение к каждому клиенту, отвечаем в любое удобное для Вас время :)</div>
+                        <div class="footer__contacts contacts-footer">
+                            <a href="" class="contacts-footer__item _icon-location">
+                                Moscow, Russia
+                            </a>
+                            <a href="tel:+74951348923" class="contacts-footer__item _icon-phone">
+                                +7 (495) 134 89 23
+                            </a>
+                            <a href="https://softtousrs.ru" target="_blank" class="contacts-footer__item">
+                                https://softtousrs.ru
+                            </a>
+                        </div>
+                    </div>
+                    <!-- max-width = 768px у нас появится спойлер-->
+                    <div data-spollers="768,max" class="footer__menu menu-footer">
+                        <div class="menu-footer__column">
+                            <!-- хотим закрыть эти колонки в спойлеры при адаптиве, при клике на кнопку, будет показываться -->
+                            <button type="button" data-spoller class="menu-footer__title _footer-title">Меню</button>
+                            <ul class="menu-footer__list">
+                                <li><a href="" class="menu-footer__link">Туры</a></li>
+                                <li><a href="" class="menu-footer__link">Отели</a></li>
+                                <li><a href="" class="menu-footer__link">Цены</a></li>
+                                <li><a href="" class="menu-footer__link">Визы</a></li>
+                                <li><a href="" class="menu-footer__link">Контакты</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-footer__column">
+                            <button type="button" data-spoller class="menu-footer__title _footer-title">Учетная запись</button>
+                            <ul class="menu-footer__list">
+                                <li><a href="" class="menu-footer__link">Вход</a></li>
+                                <li><a href="" class="menu-footer__link">Регистрация</a></li>
+                                <li><a href="" class="menu-footer__link">Моя корзина</a></li>
+                                <li><a href="" class="menu-footer__link">Избранное</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-footer__column">
+                            <button type="button" data-spoller class="menu-footer__title _footer-title">Соц сети</button>
+                            <ul class="menu-footer__list">
+                                <li><a href="" class="menu-footer__link">Facebook</a></li>
+                                <li><a href="" class="menu-footer__link">Instagram</a></li>
+                                <li><a href="" class="menu-footer__link">Вконтакте</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- подписаться на новости -->
+                    <div class="footer__subscribe subscribe">
+                        <div class="subscribe__title">Мы свяжемся с Вами</div>
+                        <form data-message="subscribe" data-test action="#" class="subscribe__form" >
+                            <input type="text" autocomplete="off" name="form[]" data-value="Введите Ваш email" data-error="Ошибка" class="subscribe__input _req _email">
+                            <button type="submit" class="subscribe__button _icon-send"></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- попап для формы "свяжитесь с нами" -->
+    <div class="popup popup_popup">
+        <div class="popup__content">
+            <div class="popup__body">
+                <div class="popup__close"></div>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup_subscribe-message">
+        <div class="popup__content">
+            <div class="popup__body">
+                <div class="popup__close"></div>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup_video">
+        <div class="popup__content">
+            <div class="popup__body">
+                <div class="popup__close popup__close_video"></div>
+                <div class="popup__video _video"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- скрипты -->
+    <script src="js/app.js"></script>
+    <script src="js/vendors.js"></script>
+</body>
+</html>
