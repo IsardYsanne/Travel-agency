@@ -1,0 +1,62 @@
+{
+	"products": [
+		{
+			"id": 9,
+			"url": "#",
+			"title": "Абхазия",
+			"text": "2 нед. / 2 взр.",
+			"labels": "",
+			"image": "abhazia.jpg",
+			"price": "руб. 50 000.00",
+			"priceOld": "",
+			"shareUrl": "",
+			"likeUrl": ""
+		},
+		{
+			"id": 10,
+			"url": "#",
+			"title": "Маврикий",
+			"text": "2 нед. / 2 взр.",
+			"labels": [
+				{
+					"type": "sale",
+					"value": "-20%"
+				}
+			],
+			"image": "mavr.jpg",
+			"price": "руб. 400 000.00",
+			"priceOld": "руб. 500 000.000",
+			"shareUrl": "",
+			"likeUrl": ""
+		},
+		{
+			"id": 11,
+			"url": "#",
+			"title": "Египет",
+			"text": "2 нед. / 2 взр.",
+			"labels": [
+				{
+					"type": "sale",
+					"value": "-10%"
+				}
+			],
+			"image": "egypt.jpg",
+			"price": "руб. 150 000",
+			"priceOld": "руб. 200 000",
+			"shareUrl": "",
+			"likeUrl": ""
+		},
+		{
+			"id": 12,
+			"url": "#",
+			"title": "Вьетнам",
+			"text": "2 нед. / 2 взр.",
+			"labels": "",
+			"image": "vetnam.jpg",
+			"price": "руб. 150 000",
+			"priceOld": "",
+			"shareUrl": "",
+			"likeUrl": ""
+		}
+	]
+}
