@@ -3,3 +3,4 @@ This is a website for the sale of tour packages. The assembly of the project is 
 <br>
 The site contains a menu (drop-down menu), a burger menu (for smartphones), a basket with goods, sliders-swipers (x4), product cards, downloadable using Ajax, a search and feedback form.
 <br>
+![tour](https://user-images.githubusercontent.com/78618492/134147437-f95f06b6-6b7a-4d9c-aced-1c6866bd33dc.jpg)
