@@ -3,6 +3,7 @@ This is a website for the sale of tour packages. The assembly of the project is 
 <br>
 The site contains a menu (drop-down menu), a burger menu (for smartphones), a basket with goods, sliders-swipers (x4), product cards, downloadable using Ajax, a search and feedback form.
 <br>
+<br>
 (Rus: Это сайт по продаже турпутёвок. Сборка проекта осуществляется с помощью Gulp. Для загрузки карточек товаров использовался Ajax. Обращаю ваше внимание на то, что проект выложен не полностью, остальной код предоставлю по вашему запросу!
 На сайте есть меню (выпадающее), меню-бургер (для смартфонов), корзина с товарами, слайдеры-свайперы (х4), карточки товаров, загружаемые с помощью Ajax, форма поиска и обратной связи.)
 <br>
